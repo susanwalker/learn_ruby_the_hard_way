@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(:content params.permit(:content, :user_id))
+    @post = Post.new(content params.permit(:content, :user_id))
 
     if @post.save
       redirect_to "/posts/#{@post_id}" notice: "Successfully created"

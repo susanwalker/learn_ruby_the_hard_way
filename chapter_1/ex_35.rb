@@ -6,6 +6,9 @@ def gold_room
   puts "This room is full of gold. How much do you take?"
 
   prompt; next_move = gets.chomp
+
+  # much better way to validate for number:
+  # gets.chomp -> if 0, "", elsif: number.to_i -> move to another fuction -> if 0 -> "not a number", else ""
   if next_move.include? "0" or next_move.include? "1"
     how_much = next_move.to_i
   else
